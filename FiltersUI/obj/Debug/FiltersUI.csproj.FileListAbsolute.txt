@@ -1,0 +1,9 @@
+D:\MC\Lectures\15\Lesson_Code\FiltersUI\FiltersUI\bin\Debug\FiltersUI.exe.config
+D:\MC\Lectures\15\Lesson_Code\FiltersUI\FiltersUI\bin\Debug\FiltersUI.exe
+D:\MC\Lectures\15\Lesson_Code\FiltersUI\FiltersUI\bin\Debug\FiltersUI.pdb
+D:\MC\Lectures\15\Lesson_Code\FiltersUI\FiltersUI\obj\Debug\FiltersUI.csprojResolveAssemblyReference.cache
+D:\MC\Lectures\15\Lesson_Code\FiltersUI\FiltersUI\obj\Debug\FiltersUI.MainForm.resources
+D:\MC\Lectures\15\Lesson_Code\FiltersUI\FiltersUI\obj\Debug\FiltersUI.Properties.Resources.resources
+D:\MC\Lectures\15\Lesson_Code\FiltersUI\FiltersUI\obj\Debug\FiltersUI.csproj.GenerateResource.Cache
+D:\MC\Lectures\15\Lesson_Code\FiltersUI\FiltersUI\obj\Debug\FiltersUI.exe
+D:\MC\Lectures\15\Lesson_Code\FiltersUI\FiltersUI\obj\Debug\FiltersUI.pdb
