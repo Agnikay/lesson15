@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FiltersUI
+namespace FiltersUI.Controller
 {
-    public class FilterViewController
+    public interface IFilterViewController
     {
-        
+        void AttachView(IFilterView view);
     }
 }

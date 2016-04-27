@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.configTabControl = new System.Windows.Forms.TabControl();
             this.generalConfigPage = new System.Windows.Forms.TabPage();
             this.filesGroupBox = new System.Windows.Forms.GroupBox();
@@ -39,32 +40,16 @@
             this.outputFileTextBox = new System.Windows.Forms.TextBox();
             this.inputFileTextBox = new System.Windows.Forms.TextBox();
             this.whiteListPage = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.addItemToWhiteListButton = new System.Windows.Forms.Button();
-            this.newWhiteItemTextBox = new System.Windows.Forms.TextBox();
-            this.whiteFilterListBox = new System.Windows.Forms.ListBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.whiteFilterFileButton = new System.Windows.Forms.Button();
-            this.filterConfigLabel = new System.Windows.Forms.Label();
-            this.whiteListConfigFileTextBox = new System.Windows.Forms.TextBox();
+            this.whiteFilterListControl = new FiltersUI.FilterListControl();
             this.blackListTabPage = new System.Windows.Forms.TabPage();
-            this.blackListSaveButton = new System.Windows.Forms.Button();
-            this.addBlackListItemButton = new System.Windows.Forms.Button();
-            this.newBlackListItemTextBox = new System.Windows.Forms.TextBox();
-            this.blackListItemsListBox = new System.Windows.Forms.ListBox();
-            this.blackListGroupBox = new System.Windows.Forms.GroupBox();
-            this.blackListBrowseButton = new System.Windows.Forms.Button();
-            this.blackListConfigLabel = new System.Windows.Forms.Label();
-            this.blackListConfigPathTextBox = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.filterListControl1 = new FiltersUI.FilterListControl();
+            this.blackListControl = new FiltersUI.FilterListControl();
             this.configTabControl.SuspendLayout();
             this.generalConfigPage.SuspendLayout();
             this.filesGroupBox.SuspendLayout();
             this.whiteListPage.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.blackListTabPage.SuspendLayout();
-            this.blackListGroupBox.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -174,11 +159,7 @@
             // 
             // whiteListPage
             // 
-            this.whiteListPage.Controls.Add(this.button1);
-            this.whiteListPage.Controls.Add(this.addItemToWhiteListButton);
-            this.whiteListPage.Controls.Add(this.newWhiteItemTextBox);
-            this.whiteListPage.Controls.Add(this.whiteFilterListBox);
-            this.whiteListPage.Controls.Add(this.groupBox1);
+            this.whiteListPage.Controls.Add(this.whiteFilterListControl);
             this.whiteListPage.Location = new System.Drawing.Point(4, 22);
             this.whiteListPage.Name = "whiteListPage";
             this.whiteListPage.Padding = new System.Windows.Forms.Padding(3);
@@ -187,89 +168,19 @@
             this.whiteListPage.Text = "White list";
             this.whiteListPage.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // whiteFilterListControl
             // 
-            this.button1.Location = new System.Drawing.Point(638, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // addItemToWhiteListButton
-            // 
-            this.addItemToWhiteListButton.Enabled = false;
-            this.addItemToWhiteListButton.Location = new System.Drawing.Point(638, 20);
-            this.addItemToWhiteListButton.Name = "addItemToWhiteListButton";
-            this.addItemToWhiteListButton.Size = new System.Drawing.Size(20, 20);
-            this.addItemToWhiteListButton.TabIndex = 4;
-            this.addItemToWhiteListButton.Text = "+";
-            this.addItemToWhiteListButton.UseVisualStyleBackColor = true;
-            this.addItemToWhiteListButton.Click += new System.EventHandler(this.addItemToListButton_Click);
-            // 
-            // newWhiteItemTextBox
-            // 
-            this.newWhiteItemTextBox.Location = new System.Drawing.Point(447, 20);
-            this.newWhiteItemTextBox.Name = "newWhiteItemTextBox";
-            this.newWhiteItemTextBox.Size = new System.Drawing.Size(174, 20);
-            this.newWhiteItemTextBox.TabIndex = 3;
-            this.newWhiteItemTextBox.TextChanged += new System.EventHandler(this.newWhiteItemTextBox_TextChanged);
-            // 
-            // whiteFilterListBox
-            // 
-            this.whiteFilterListBox.FormattingEnabled = true;
-            this.whiteFilterListBox.Location = new System.Drawing.Point(447, 58);
-            this.whiteFilterListBox.Name = "whiteFilterListBox";
-            this.whiteFilterListBox.Size = new System.Drawing.Size(174, 303);
-            this.whiteFilterListBox.TabIndex = 2;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.whiteFilterFileButton);
-            this.groupBox1.Controls.Add(this.filterConfigLabel);
-            this.groupBox1.Controls.Add(this.whiteListConfigFileTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(3, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 135);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "White List Settings";
-            // 
-            // whiteFilterFileButton
-            // 
-            this.whiteFilterFileButton.Location = new System.Drawing.Point(208, 19);
-            this.whiteFilterFileButton.Name = "whiteFilterFileButton";
-            this.whiteFilterFileButton.Size = new System.Drawing.Size(75, 20);
-            this.whiteFilterFileButton.TabIndex = 7;
-            this.whiteFilterFileButton.Text = "Browse";
-            this.whiteFilterFileButton.UseVisualStyleBackColor = true;
-            this.whiteFilterFileButton.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // filterConfigLabel
-            // 
-            this.filterConfigLabel.AutoSize = true;
-            this.filterConfigLabel.Location = new System.Drawing.Point(6, 22);
-            this.filterConfigLabel.Name = "filterConfigLabel";
-            this.filterConfigLabel.Size = new System.Drawing.Size(59, 13);
-            this.filterConfigLabel.TabIndex = 6;
-            this.filterConfigLabel.Text = "Config File:";
-            // 
-            // whiteListConfigFileTextBox
-            // 
-            this.whiteListConfigFileTextBox.Location = new System.Drawing.Point(81, 19);
-            this.whiteListConfigFileTextBox.Name = "whiteListConfigFileTextBox";
-            this.whiteListConfigFileTextBox.ReadOnly = true;
-            this.whiteListConfigFileTextBox.Size = new System.Drawing.Size(100, 20);
-            this.whiteListConfigFileTextBox.TabIndex = 5;
+            this.whiteFilterListControl.FilePath = "";
+            this.whiteFilterListControl.FilterItems = null;
+            this.whiteFilterListControl.FilterName = "";
+            this.whiteFilterListControl.Location = new System.Drawing.Point(0, 6);
+            this.whiteFilterListControl.Name = "whiteFilterListControl";
+            this.whiteFilterListControl.Size = new System.Drawing.Size(713, 358);
+            this.whiteFilterListControl.TabIndex = 0;
             // 
             // blackListTabPage
             // 
-            this.blackListTabPage.Controls.Add(this.blackListSaveButton);
-            this.blackListTabPage.Controls.Add(this.addBlackListItemButton);
-            this.blackListTabPage.Controls.Add(this.newBlackListItemTextBox);
-            this.blackListTabPage.Controls.Add(this.blackListItemsListBox);
-            this.blackListTabPage.Controls.Add(this.blackListGroupBox);
+            this.blackListTabPage.Controls.Add(this.blackListControl);
             this.blackListTabPage.Location = new System.Drawing.Point(4, 22);
             this.blackListTabPage.Name = "blackListTabPage";
             this.blackListTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -277,78 +188,6 @@
             this.blackListTabPage.TabIndex = 2;
             this.blackListTabPage.Text = "Black List";
             this.blackListTabPage.UseVisualStyleBackColor = true;
-            // 
-            // blackListSaveButton
-            // 
-            this.blackListSaveButton.Location = new System.Drawing.Point(643, 44);
-            this.blackListSaveButton.Name = "blackListSaveButton";
-            this.blackListSaveButton.Size = new System.Drawing.Size(70, 23);
-            this.blackListSaveButton.TabIndex = 10;
-            this.blackListSaveButton.Text = "Save";
-            this.blackListSaveButton.UseVisualStyleBackColor = true;
-            // 
-            // addBlackListItemButton
-            // 
-            this.addBlackListItemButton.Enabled = false;
-            this.addBlackListItemButton.Location = new System.Drawing.Point(643, 6);
-            this.addBlackListItemButton.Name = "addBlackListItemButton";
-            this.addBlackListItemButton.Size = new System.Drawing.Size(20, 20);
-            this.addBlackListItemButton.TabIndex = 9;
-            this.addBlackListItemButton.Text = "+";
-            this.addBlackListItemButton.UseVisualStyleBackColor = true;
-            // 
-            // newBlackListItemTextBox
-            // 
-            this.newBlackListItemTextBox.Location = new System.Drawing.Point(452, 6);
-            this.newBlackListItemTextBox.Name = "newBlackListItemTextBox";
-            this.newBlackListItemTextBox.Size = new System.Drawing.Size(174, 20);
-            this.newBlackListItemTextBox.TabIndex = 8;
-            // 
-            // blackListItemsListBox
-            // 
-            this.blackListItemsListBox.FormattingEnabled = true;
-            this.blackListItemsListBox.Location = new System.Drawing.Point(452, 44);
-            this.blackListItemsListBox.Name = "blackListItemsListBox";
-            this.blackListItemsListBox.Size = new System.Drawing.Size(174, 303);
-            this.blackListItemsListBox.TabIndex = 7;
-            // 
-            // blackListGroupBox
-            // 
-            this.blackListGroupBox.Controls.Add(this.blackListBrowseButton);
-            this.blackListGroupBox.Controls.Add(this.blackListConfigLabel);
-            this.blackListGroupBox.Controls.Add(this.blackListConfigPathTextBox);
-            this.blackListGroupBox.Location = new System.Drawing.Point(6, 22);
-            this.blackListGroupBox.Name = "blackListGroupBox";
-            this.blackListGroupBox.Size = new System.Drawing.Size(353, 135);
-            this.blackListGroupBox.TabIndex = 6;
-            this.blackListGroupBox.TabStop = false;
-            this.blackListGroupBox.Text = "Black List Settings";
-            // 
-            // blackListBrowseButton
-            // 
-            this.blackListBrowseButton.Location = new System.Drawing.Point(208, 19);
-            this.blackListBrowseButton.Name = "blackListBrowseButton";
-            this.blackListBrowseButton.Size = new System.Drawing.Size(75, 20);
-            this.blackListBrowseButton.TabIndex = 7;
-            this.blackListBrowseButton.Text = "Browse";
-            this.blackListBrowseButton.UseVisualStyleBackColor = true;
-            // 
-            // blackListConfigLabel
-            // 
-            this.blackListConfigLabel.AutoSize = true;
-            this.blackListConfigLabel.Location = new System.Drawing.Point(6, 22);
-            this.blackListConfigLabel.Name = "blackListConfigLabel";
-            this.blackListConfigLabel.Size = new System.Drawing.Size(59, 13);
-            this.blackListConfigLabel.TabIndex = 6;
-            this.blackListConfigLabel.Text = "Config File:";
-            // 
-            // blackListConfigPathTextBox
-            // 
-            this.blackListConfigPathTextBox.Location = new System.Drawing.Point(81, 19);
-            this.blackListConfigPathTextBox.Name = "blackListConfigPathTextBox";
-            this.blackListConfigPathTextBox.ReadOnly = true;
-            this.blackListConfigPathTextBox.Size = new System.Drawing.Size(100, 20);
-            this.blackListConfigPathTextBox.TabIndex = 5;
             // 
             // tabPage1
             // 
@@ -363,10 +202,23 @@
             // 
             // filterListControl1
             // 
+            this.filterListControl1.FilePath = "";
+            this.filterListControl1.FilterItems = ((System.Collections.Generic.List<string>)(resources.GetObject("filterListControl1.FilterItems")));
+            this.filterListControl1.FilterName = "";
             this.filterListControl1.Location = new System.Drawing.Point(1, 7);
             this.filterListControl1.Name = "filterListControl1";
             this.filterListControl1.Size = new System.Drawing.Size(712, 384);
             this.filterListControl1.TabIndex = 0;
+            // 
+            // blackListControl
+            // 
+            this.blackListControl.FilePath = "";
+            this.blackListControl.FilterItems = null;
+            this.blackListControl.FilterName = "";
+            this.blackListControl.Location = new System.Drawing.Point(3, 6);
+            this.blackListControl.Name = "blackListControl";
+            this.blackListControl.Size = new System.Drawing.Size(713, 358);
+            this.blackListControl.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -381,13 +233,7 @@
             this.filesGroupBox.ResumeLayout(false);
             this.filesGroupBox.PerformLayout();
             this.whiteListPage.ResumeLayout(false);
-            this.whiteListPage.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.blackListTabPage.ResumeLayout(false);
-            this.blackListTabPage.PerformLayout();
-            this.blackListGroupBox.ResumeLayout(false);
-            this.blackListGroupBox.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -406,25 +252,11 @@
         private System.Windows.Forms.Button browseOutputButton;
         private System.Windows.Forms.Button browseInputButton;
         private System.Windows.Forms.Button startFilteringButton;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button whiteFilterFileButton;
-        private System.Windows.Forms.Label filterConfigLabel;
-        private System.Windows.Forms.TextBox whiteListConfigFileTextBox;
-        private System.Windows.Forms.ListBox whiteFilterListBox;
-        private System.Windows.Forms.Button addItemToWhiteListButton;
-        private System.Windows.Forms.TextBox newWhiteItemTextBox;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage blackListTabPage;
-        private System.Windows.Forms.Button blackListSaveButton;
-        private System.Windows.Forms.Button addBlackListItemButton;
-        private System.Windows.Forms.TextBox newBlackListItemTextBox;
-        private System.Windows.Forms.ListBox blackListItemsListBox;
-        private System.Windows.Forms.GroupBox blackListGroupBox;
-        private System.Windows.Forms.Button blackListBrowseButton;
-        private System.Windows.Forms.Label blackListConfigLabel;
-        private System.Windows.Forms.TextBox blackListConfigPathTextBox;
         private System.Windows.Forms.TabPage tabPage1;
         private FilterListControl filterListControl1;
+        private FilterListControl whiteFilterListControl;
+        private FilterListControl blackListControl;
     }
 }
 

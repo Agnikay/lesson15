@@ -65,6 +65,7 @@
             this.newFilterItemTextBox.Name = "newFilterItemTextBox";
             this.newFilterItemTextBox.Size = new System.Drawing.Size(174, 20);
             this.newFilterItemTextBox.TabIndex = 13;
+            this.newFilterItemTextBox.TextChanged += new System.EventHandler(this.newFilterItemTextBox_TextChanged);
             // 
             // FilterItemsListBox
             // 
@@ -88,7 +89,7 @@
             // 
             // filterBrowseButton
             // 
-            this.filterBrowseButton.Location = new System.Drawing.Point(208, 19);
+            this.filterBrowseButton.Location = new System.Drawing.Point(213, 19);
             this.filterBrowseButton.Name = "filterBrowseButton";
             this.filterBrowseButton.Size = new System.Drawing.Size(75, 20);
             this.filterBrowseButton.TabIndex = 7;

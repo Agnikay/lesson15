@@ -14,9 +14,8 @@ namespace FiltersUI
         event FilterItemAddedEventHandler ItemAdded;
         event ConfigFileSelectedEventHandler ConfigFileSelected;
 
+        List<string> FilterItems { set; get; }
         string FilterName { set; get; }
-        string FilePath { set; get; }
-
-        void LoadFilterItems(List<string> filterItems);
+        string FilePath { set; get; }       
     }
 }

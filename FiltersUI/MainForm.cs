@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FiltersUI.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,15 @@ namespace FiltersUI
 {
     public partial class MainForm : Form
     {
+        IFilterViewController controller;
+
         public MainForm()
         {
             InitializeComponent();
             //whiteFilterEntriesListView.View = View.Details;
+            controller = new FilterViewController();
+            controller.AttachView(whiteFilterListControl);
+            controller.AttachView(blackListControl);
 
         }
 
@@ -62,54 +68,7 @@ namespace FiltersUI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            DialogResult result = fileDialog.ShowDialog();
 
-            if (result == DialogResult.OK)
-            {
-                whiteListConfigFileTextBox.Text = fileDialog.FileName;
-            }
-
-            using (StreamReader reader = new StreamReader(whiteListConfigFileTextBox.Text))
-            {
-                string line;
-
-                while ((line = reader.ReadLine()) != null)
-                {
-                    whiteFilterListBox.Items.Add(line);
-                }
-            }
-        }
-
-        private void addItemToListButton_Click(object sender, EventArgs e)
-        {
-            whiteFilterListBox.Items.Add(newWhiteItemTextBox.Text);
-        }
-
-        private void newWhiteItemTextBox_TextChanged(object sender, EventArgs e)
-        {
-            addItemToWhiteListButton.Enabled = !String.IsNullOrEmpty(newWhiteItemTextBox.Text);
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                using (StreamWriter writer = new StreamWriter(whiteListConfigFileTextBox.Text))
-                {
-                    foreach (string whiteListItem in whiteFilterListBox.Items)
-                    {
-                        writer.WriteLine(whiteListItem);
-                    }
-                }
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                MessageBox.Show("File is read only");
-            }
-        }
     }
 }
 

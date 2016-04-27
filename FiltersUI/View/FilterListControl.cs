@@ -14,6 +14,7 @@ namespace FiltersUI
     {
 
         private string filterName = String.Empty;
+        List<string> filterItems;
 
         public FilterListControl()
         {
@@ -47,16 +48,25 @@ namespace FiltersUI
             }
         }
 
+        public List<string> FilterItems
+        {
+            get
+            {
+                return filterItems;
+            }
+
+            set
+            {
+                filterItems = value;
+                FilterItemsListBox.DataSource = null;
+                FilterItemsListBox.DataSource = filterItems;
+                
+            }
+        }
+
         public event ConfigFileSelectedEventHandler ConfigFileSelected;
         public event FilterItemAddedEventHandler ItemAdded;
 
-        public void LoadFilterItems(List<string> filterItems)
-        {
-            foreach (string filter in filterItems)
-            {              
-                FilterItemsListBox.Items.Add(filter);
-            }
-        }
 
         private void filterBrowseButton_Click(object sender, EventArgs e)
         {
@@ -90,5 +100,11 @@ namespace FiltersUI
                 ItemAdded(this, newFilterItemTextBox.Text);
             }
         }
+
+        private void newFilterItemTextBox_TextChanged(object sender, EventArgs e)
+        {
+            addFilterItemButton.Enabled = !String.IsNullOrEmpty(newFilterItemTextBox.Text);
+       }
+
     }
 }
